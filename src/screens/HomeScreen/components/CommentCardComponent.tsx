@@ -19,7 +19,7 @@ export const CommentCardComponent = ({comment}:Props) => {
   return (
     <View style={styles.rootMessage}>
         <View>
-        <Text variant='labelLarge' >{}: {comment.comment} </Text>
+        <Text variant='labelLarge' >Comentario: {comment.comment} </Text>
         </View>
         <View style={styles.iconEnd}>
         <IconButton 
