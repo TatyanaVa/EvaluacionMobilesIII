@@ -28,7 +28,7 @@ const routesNoAuth:Routes[]=[
 
 const routesAuth:Routes[]=[
   {name: 'Home',screen:HomeScreen},
-  {name:"Detail",screen : DetailCommentScreen,headerShow:true}
+  {name:"Comment",screen : DetailCommentScreen,headerShow:true}
 ];
 
 export const StackNavigator=()=> {

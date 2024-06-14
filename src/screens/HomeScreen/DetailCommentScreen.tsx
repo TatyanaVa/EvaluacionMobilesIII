@@ -35,7 +35,7 @@ export const DetailCommentScreen = () => {
     return (
         <View style={styles.rootDetail}>
             <View>
-                <Text variant='headlineSmall'>Comentario {editFormComment.comment} </Text>
+                <Text variant='headlineSmall'>Comentariossssssss {editFormComment.comment} </Text>
                 <TextInput
                     value={editFormComment.comment}
                     onChangeText={(value) => handlerSetValues('comment', value)}

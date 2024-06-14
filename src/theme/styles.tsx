@@ -35,7 +35,7 @@ export const styles=StyleSheet.create({
     },
     iconEnd:{
         flex:1,
-        alignItems:'flex-end'
+        alignItems:'flex-end',
     },
     modal:{
         paddingHorizontal:20,

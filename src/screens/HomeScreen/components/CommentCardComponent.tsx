@@ -1,9 +1,11 @@
-import React, {} from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { IconButton, Text } from 'react-native-paper';
 import { styles } from '../../../theme/styles';
 import { CommonActions, useNavigation } from '@react-navigation/native';
-import { Comment} from '../HomeScreen';
+import { Comment, formUser} from '../HomeScreen';
+import firebase from '@firebase/auth';
+import { auth } from '../../../configs/firebaseConfig';
 
 
 
@@ -14,12 +16,23 @@ interface FormLogin{
   user:FormLogin;
 }
 export const CommentCardComponent = ({comment}:Props) => {
+  
   const navigation=useNavigation();
+  const [formUser, setFormUser] = useState<formUser>({
+    name:''
+  });
+
+  useEffect(()=>{
+    setUserAuth(auth.currentUser);
+    setFormUser({name:auth.currentUser?.displayName??""})
+  
+},[]);
+  const [userAuth, setUserAuth] = useState<firebase.User | null>(null);
   
   return (
     <View style={styles.rootMessage}>
         <View>
-        <Text variant='labelLarge' >Comentario: {comment.comment} </Text>
+        <Text variant='labelLarge' >{userAuth?.email} :{comment.comment} </Text>
         </View>
         <View style={styles.iconEnd}>
         <IconButton 
